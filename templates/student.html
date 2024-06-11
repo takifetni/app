@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <title>Student</title>
+</head>
+<body>
+  <div class="menu">
+    <ul>
+        <li class="pro">
+            <div class="profile">
+                <img src="/image/IMG_20240313_224909_473-removebg-preview.png" alt="this is profile">
+            </div>
+             <h2>{{ student_name }}</h2>
+        </li>
+        <li class="dashboard">
+            <a href="{{ url_for('information') }}">
+                <i class="fas fa-home"></i>
+                <p>Information</p>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('group') }} ">
+                <i class="fas fa-user-group"></i>
+                <p>Groupe</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i id="i" class="fas fa-calendar-alt"></i>
+                <p>Planing</p>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('note_ex') }}">
+                <i class="fas fa-list-alt"></i>
+                <p>Notes examens</p>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('note_td') }}">
+                <i class="fas fa-pen"></i>
+                <p>Notes C.Continu</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="fas fa-book"></i>
+                <p>Course</p>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('absence') }}">
+                <i class="fas fa-chair"></i> 
+                <p>Absences</p>
+            </a>
+        </li>
+        <li class="log">
+            <a href="{{ url_for('logout') }}" class="l">
+                <i class="fas fa-sign-out"></i>
+                <p>Log out</p>
+            </a>
+        </li>
+    </ul>
+  </div>
+  <div class="content">
+  <div class="dash" id="dashid">
+    <p id="p">Student</p>
+    <i id="i" class="fas fa-chart-bar"></i>
+  </div>
+   <div  class="content_imp">
+     <a href="#" class="content_imp-ch">
+        <i id="i" class="fas fa-book"></i>
+        <p id="p">Course</p>
+     </a>
+     <a href="{{ url_for('note_td') }}" class="content_imp-ch">
+        <i id="i" class="fas fa-pen"></i> 
+        <p id="p">Notes C.Continu</p>
+     </a>
+   </div>
+   <div class="content_imp">
+    <a href="{{ url_for('note_ex') }}" class="content_imp-ch">
+        <i id="i" class="fas fa-list-alt"></i>
+       <p id="p">Notes examens</p>
+    </a>
+    <a href="{{ url_for('absence') }}" class="content_imp-ch">
+        <i id="i" class="fas fa-chair"></i> 
+       <p id="p">Absences</p>
+    </a>
+  </div>
+  <!-- <div class="content_imp">
+    <a href="" class="content_imp-ch"> -->
+        <!-- <i id="i" class="fas fa-calendar-alt"></i> -->
+       <!-- <p id="p">Planning</p>
+    </a>
+  </div> -->
+</body>
+<script src="/javascript/main.js"></script>
+</html>

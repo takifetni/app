@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web site of education </title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="h">Web site of Education</h1>
+    </header>
+    <main>
+        <section id="login1">
+            <form action="" method="POST" id="f">
+                {{ student_form.hidden_tag() }}
+                <h1 class="lo">Log in as</h1>
+                <p>Student</p>
+                 <div>
+                <label id="l" for=" username">  Regestration number:</label>
+                <i class="fas fa -user" ></i>
+                {{ student_form.matricule }}
+                {% for error in student_form.matricule.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div>
+                <label for=" password">  Password:</label>
+                {{ student_form.password }}
+                {% for error in student_form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <input type="hidden" name="user_type" value="student">
+                {{ student_form.submit }}
+            </form>
+            
+      
+        </section>
+        
+        <section id="login2">
+            <form action="" method="post">
+                {{ admin_form.hidden_tag() }}
+                <h1 class="lo">Log in as</h1>
+                 <p> administrator </p>
+                <label for=" username">  User Name:</label>
+                {{ admin_form.username }}
+                {% for error in admin_form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                <label for=" password">  Password:</label>
+                {{ admin_form.password }}
+                {% for error in admin_form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                <input type="hidden" name="user_type" value="admin">
+                {{ admin_form.submit }}
+                <button type="submit" class="styled_button">Next</button>
+            </form>
+              
+        </section>
+        <footer>
+            <h1 id="h2">Second year engineer</h1>
+        </footer>
+      
+    </main>
+ 
+</body>
+<script src="static/js/main.js"></script>
+</html>

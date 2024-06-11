@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_ex.css') }}">
+    <title>Note Examens</title>
+</head>
+<body>
+    <form method="POST">
+        {{ search_form.hidden_tag() }}
+        <div>
+            {{ search_form.matricule.label }} {{ search_form.matricule(size=20) }}
+            {{ search_form.search() }}
+        </div>
+    </form>
+    
+    {% if student %}
+    <form method="POST">
+        <input type="hidden" name="student_id" value="{{ student.etudiant_id }}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th id="coef">Coef</th>
+                    <th id="note">Note for Examen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for module in modules %}
+                <tr>
+                    <td>{{ module.module }}</td>
+                    <td id="numcof">{{ module.coefficient }}</td>
+                    <td class="numnot">
+                        <div id="btndiv">
+                          <form method="POST">
+                            {{ note_form.hidden_tag() }}
+                            {{ note_form.note() }}
+                            
+                           </form>
+                           
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {{ note_form.submit() }}
+    </form>
+    {% endif %}
+</body>
+</html>

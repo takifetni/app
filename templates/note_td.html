@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/note_td.css">
+    <title>note_td</title>
+</head>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th id="note">coefficient</th>
+            <th id="note">Note for Tutorial</th>
+          </tr>
+        
+        </thead>
+        <tbody>
+          {% for item in data %}
+          <tr>
+              <td>{{ item.module }}</td>
+              <td>{{ item.coef }}</td>
+              <td>{{ item.note }}</td>
+          </tr>
+      {% endfor %}
+        </tbody>
+        <script src="/javascript/main.js"></script>
+      </table>
+      
+</body>
+</html>
